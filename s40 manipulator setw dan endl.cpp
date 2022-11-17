@@ -12,5 +12,6 @@ int main()
   cout <<setw(4) <<1234 <<endl;
   cout <<setw(4) <<12345 <<endl;
   cout <<setw(4) <<123456 <<endl;
-   
+  
+  return 0; 
 }
