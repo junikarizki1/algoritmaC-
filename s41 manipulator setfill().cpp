@@ -10,4 +10,6 @@ int main()
     cout <<setw(4) <<1 <<endl <<endl; 
     cout <<"Tampilan menggunakan setfill('*')" <<endl;
     cout <<setfill('*') <<setw(4) <<1 <<endl;
+    
+    return 0;
 }
