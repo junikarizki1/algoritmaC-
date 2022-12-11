@@ -3,8 +3,10 @@ using namespace std;
 int main() {
 
 //Looping, jika bernilai True maka akan dieksekuli
-    cout <<"Looping While Created by Junika Rizki\n";
-    cout <<"=====================================\n";
+cout <<"Looping menggunakan While\n";
+cout <<"Created By Junika Rizki\n";
+cout <<"==============================\n\n";
+
     int y=8;
     while (y>=2) {
         cout <<y <<" ";
