@@ -6,12 +6,14 @@ cout <<"Program Menghitung Rekapitulasi Kehadiran Mahasiswa\n";
 cout <<"Created By Junika Rizki\n";
 cout <<"==============================\n\n";
 
-int jmlMhs, hdrDsn;
+int jmlMhs, hdrDsn, tdkUjian=0,min;
+float jml, rata;
 char nama[50];
 string namaMhs [50];
 string nim[50];
 double hdrMhs[50];
 double nAk[50];
+string status[50];
 
 cout <<"Masukkan Jumlah Siswa ";
 cin >>jmlMhs;
@@ -28,19 +30,37 @@ for (int x=0; x <jmlMhs; x++) {
     namaMhs[x] = nama;
     cout <<"Total Hadir Mahasiswa ";
     cin >>hdrMhs[x];
+    cout <<endl;
     nAk[x] = hdrMhs[x] / hdrDsn * 10;
     cout <<endl;
+    if (nAk[x] >=7.5){
+        status[x] = "Ikut ujian ";
+    }else {status[x] = "Tidak Ikut Ujian ";
+    tdkUjian +=1;}
+    jml += nAk[x];
+    min = nAk[x];
+    if (nAk[x] < min) {
+        min = nAk[x];
+    }
 }
+rata = jml / jmlMhs;
 
 cout <<"REKAPITULASI KEHADIRAN MAHASISWA \n";
 cout <<"============================================================== \n";
 cout <<"NO   NIM   NAMA MAHASISWA    TOTAL HADIR    NILAI AK    STATUS \n";
 cout <<"============================================================== \n";
 
-for (int x =1; x <jmlMhs; x++){
-    cout <<x <<"  ";
-    cout <<namaMhs[x];
-
+for (int x =0; x <jmlMhs; x++){
+    cout <<x+1 <<"  ";
+    cout <<nim[x] <<"  ";
+    cout <<namaMhs[x] <<"  ";
+    cout <<hdrMhs[x] <<"  ";
+    cout <<nAk[x] <<"  ";
+    cout <<status[x] <<"  ";
 }
+cout <<"================================";
+    cout <<"\nRATA-RATA NILAI AK = "<<rata;
+    cout <<"\nTOTAL HADIR PALING RENDAH = "<<min <<" KALI";
+    cout <<"\nJUMLAH MHS TIDAK IKUT UJIAN = "<<tdkUjian <<" ORANG";
 return 0;
 }
