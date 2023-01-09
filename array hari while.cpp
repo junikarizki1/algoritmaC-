@@ -2,17 +2,14 @@
 using namespace std;
 int main() {
 string days [10];
-int x=0;
-while (x<7){
+cout <<"Menggunakan For While \n\n";
+for (int x=0; x<7; x++){
     cout <<"Inputkan Hari ";
     cin >>days[x];
-    x++;
 }
-x=0;
-while (x<7){
+cout <<endl<<endl;
+for (int x=0; x<7; x++){
     cout <<days[x] <<" ";
-    x++;
 }
-
     return 0;
 }
