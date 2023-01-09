@@ -39,9 +39,8 @@ for (int x=1; x <=jmlMhs; x++) {
     }else {status[x] = "Tidak Ikut Ujian ";
     tdkUjian +=1;}
     jml += nAk[x];
-    min = nAk[x];
-    if (nAk[x] < min) {
-        min = nAk[x];
+    if (hdrMhs[x] < min) {
+        min = hdrMhs[x];
     }
 }
 rata = jml / jmlMhs;
