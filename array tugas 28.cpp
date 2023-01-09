@@ -1,10 +1,11 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 int main () {
 
 cout <<"Program Menghitung Rekapitulasi Kehadiran Mahasiswa\n";
 cout <<"Created By Junika Rizki\n";
-cout <<"==============================\n\n";
+cout <<"====================================================================================\n\n";
 
 int jmlMhs, hdrDsn, tdkUjian=0,min;
 float jml, rata;
@@ -21,7 +22,7 @@ cout <<"Masukkan Total Hadir Dosen ";
 cin >>hdrDsn;
 cout <<endl<<endl;
 
-for (int x=0; x <jmlMhs; x++) {
+for (int x=1; x <=jmlMhs; x++) {
     cout <<"NIM ";
     cin >>nim[x];
     cout <<"Nama Mahasiswa ";
@@ -45,20 +46,16 @@ for (int x=0; x <jmlMhs; x++) {
 }
 rata = jml / jmlMhs;
 
-cout <<"REKAPITULASI KEHADIRAN MAHASISWA \n";
-cout <<"============================================================== \n";
-cout <<"NO   NIM   NAMA MAHASISWA    TOTAL HADIR    NILAI AK    STATUS \n";
-cout <<"============================================================== \n";
-
-for (int x =0; x <jmlMhs; x++){
-    cout <<x+1 <<"  ";
-    cout <<nim[x] <<"  ";
-    cout <<namaMhs[x] <<"  ";
-    cout <<hdrMhs[x] <<"  ";
-    cout <<nAk[x] <<"  ";
-    cout <<status[x] <<"  ";
+cout << "REKAPTULASI KEHADIRAN MAHASISWA" << endl;
+    cout <<"====================================================================================\n";
+    cout << setiosflags(ios::left);
+    cout << "NO" << setw(15) << "   NIM" << setw(15) << "  NAMA MAHASISWA" << setw(15) << "  TOTAL HADIR" << setw(10) << "  NILAI AK        STATUS" << endl;
+    cout <<"====================================================================================\n";
+    for (int x = 1; x <= jmlMhs; x++) {
+        cout << setiosflags(ios::left);
+        cout << x << "    " << setw(10) << nim[x] << "       " << setw(15) << namaMhs[x] << "   " << setw(10) << hdrMhs[x] << "  " << setw(10) << setprecision(2) << nAk[x] << status[x] << endl;
 }
-cout <<"================================";
+
     cout <<"\nRATA-RATA NILAI AK = "<<rata;
     cout <<"\nTOTAL HADIR PALING RENDAH = "<<min <<" KALI";
     cout <<"\nJUMLAH MHS TIDAK IKUT UJIAN = "<<tdkUjian <<" ORANG";
