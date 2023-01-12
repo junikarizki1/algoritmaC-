@@ -1,13 +1,13 @@
 #include <iostream>
-
+#include <iomanip>
 using namespace std;
 
 int main()
 {   
-   int jmlMhs, sks[50];
-   double  jml=0, rata, max=0, min, ipk3=0;
-   char nama[50];
-   string namaMhs[50];
+    int jmlMhs, sks[50];
+    double  jml=0, rata, max=0, min, ipk3=0;
+    char nama[50];
+    string namaMhs[50];
    double ipk[10];
    cout << "Inputkan Jumlah Mahasiswa : " << endl;
    cin >>jmlMhs;
@@ -37,12 +37,25 @@ int main()
    };
    };
    rata= jml / jmlMhs;
+   cout <<"\nREKAPITULASI INDEKS PRESTASI MAHASISWA\n";
+   cout <<"------------------------------------------------------------------\n";
+   cout <<setiosflags(ios::left);
+   cout <<setw(5)<<"No" <<setw(25)<<"Nama Mahasiswa"<<setw(15)<<"Nilai IPK"<<setw(15)<<"SKS Smt Berikut"<<endl;
+   cout <<"------------------------------------------------------------------\n";
    for (int x=1; x<=jmlMhs; x++){
-   cout <<x <<" Nama : "<<namaMhs[x] <<" IPK : "<<ipk[x] <<" sks : "<<sks[x] <<endl;
-   };
-   cout <<"Rata- rata = "<<rata;
-   cout <<"\nNilai Tertinggi = "<<max;
-   cout <<"\nIPK >=3 = "<<ipk3;
-   cout <<"\nMahasiswa Yang perlu dibina = "<<min;
+       cout <<setiosflags(ios::left);
+       cout <<setw(5) <<x;
+       cout <<setw(25) <<namaMhs[x];
+       cout <<resetiosflags(ios::left);
+       cout <<setw(5) <<ipk[x];
+       cout <<setiosflags(ios::right);
+       cout <<setw(18) <<sks[x] <<endl;
+       cout <<resetiosflags(ios::right);
+    };
+    cout <<"------------------------------------------------------------------\n";
+   cout <<"\nRata-rata Nilai IPK                     = "<<rata;
+   cout <<"\nNilai IPK Tertinggi                     = "<<max;
+   cout <<"\nJumlah Mahasiswa dengan IPK >=3.00      = "<<ipk3;
+   cout <<"\nJumlah Mahasiswa Yang Perlu Dibina      = "<<min;
    return 0;
 }
